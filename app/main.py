@@ -4,6 +4,30 @@ from pydantic import BaseModel, Field
 from typing import List, Optional
 from datetime import datetime
 
+# Create app
+app = FastAPI(
+    title="JStar Astrology API",
+    description="Calculate natal charts using Kerykeion",
+    version="1.0.0"
+)
+
+# CORS for frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/health")
+def health():
+    """Health check endpoint"""
+    return {"status": "ok"}
+
+
+
 class Planet(BaseModel):
     id: str = ""
     name: str
@@ -66,3 +90,9 @@ class ChartResponse(BaseModel):
     aspects: List[Aspect]
     angles: List[Angle]
 
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+
+#
