@@ -118,9 +118,9 @@ def calculate_chart(req: ChartRequest):
             "Seventh_House": 7, "Eighth_House": 8, "Ninth_House": 9,
             "Tenth_House": 10, "Eleventh_House": 11, "Twelfth_House": 12}
         planets = []
-        for i, p in enumerate(planet_objects):
+        for p in planet_objects:
             planets.append(Planet(
-                id = str(i),
+                id = str(uuid.uuid4()),
                 name=p.name,
                 symbol=p.emoji,
                 longitude=p.abs_pos,
@@ -154,25 +154,37 @@ def calculate_chart(req: ChartRequest):
         aspects = []
         for a in natal_result.aspects:
             aspects.append(Aspect(
+                id = str(uuid.uuid4()),
                 planet1=a.p1_name,
                 planet2=a.p2_name,
                 type=a.aspect,
-                angle=a.aspect_degrees,
+                angle=a.diff,
                 orb=a.orbit,
                 applying = (a.aspect_movement == "Applying")
                 ))
 
-        '''# -------- ANGLES --------
-        angles = [Angle(
-        name="Ascendant",
-        longitude=subject.ascendant.position,
-        sign=subject.ascendant.sign,
-        signDegree=subject.ascendant.sign_pos),
-        Angle(
-        name="Midheaven",
-        longitude=subject.midheaven.position,
-        sign=subject.midheaven.sign,
-        signDegree=subject.midheaven.sign_pos)]'''
+        # -------- ANGLES --------
+        SIGNS = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo",
+                 "Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"]
+        def deg_to_sign(long):
+            sign_index=int(long//30)
+            sign = SIGNS[sign_index]
+            sign_degree = long%30
+            return sign, sign_degree
+        
+        angles = []
+        angle_data = [
+            ("ASC", subject.first_house.abs_pos),
+            ("DSC", subject.seventh_house.abs_pos),
+            ("MC", subject.tenth_house.abs_pos),
+            ("IC", subject.fourth_house.abs_pos)]
+        for name, long in angle_data:
+            sign, sign_degree = deg_to_sign(long)
+            angles.append(Angle(id=str(uuid.uuid4()),
+                                name=name,
+                                longitude=long,
+                                sign=sign,
+                                signDegree=sign_degree))
 
         return ChartResponse(
             id=str(uuid.uuid4()),
@@ -189,7 +201,7 @@ def calculate_chart(req: ChartRequest):
             planets=planets,
             houses=houses,
             aspects=aspects,
-            #angles=angles
+            angles=angles
         )
 
     except Exception as e:
