@@ -109,7 +109,12 @@ def calculate_chart(req: ChartRequest):
             tz_str=req.timezone
         )
         planet_objects = [subject.sun,subject.moon,subject.mercury,subject.venus,subject.mars,
-                          subject.jupiter,subject.saturn,subject.uranus,subject.neptune,subject.pluto]
+                          subject.jupiter,subject.saturn,subject.uranus,subject.neptune,subject.pluto,
+                          subject.chiron, subject.true_south_lunar_node, subject.true_north_lunar_node]
+        
+        sign_map = {"Ari": "Aries", "Tau": "Taurus", "Gem": "Gemini", "Can": "Cancer",
+                         "Leo": "Leo", "Vir": "Virgo", "Lib": "Libra", "Sco": "Scorpio",
+                         "Sag": "Sagittarius", "Cap": "Capricorn", "Aqu": "Aquarius", "Pis": "Pisces"}
 
         # -------- PLANETS --------
         house_map = {
@@ -124,7 +129,7 @@ def calculate_chart(req: ChartRequest):
                 name=p.name,
                 symbol=p.emoji,
                 longitude=p.abs_pos,
-                sign=p.sign,
+                sign=sign_map.get(p.sign, 0),
                 signDegree=p.position,
                 house=house_map.get(p.house, 0),
                 speed=p.speed,
@@ -144,7 +149,7 @@ def calculate_chart(req: ChartRequest):
             houses.append(House(
                 id=i + 1,
                 cusp=current_cusp,
-                sign=h.sign,
+                sign=sign_map.get(h.sign, 0),
                 signDegree=h.position,
                 size=size
                 ))
@@ -153,12 +158,16 @@ def calculate_chart(req: ChartRequest):
         natal_result = AspectsFactory.single_chart_aspects(subject)
         aspects = []
         for a in natal_result.aspects:
+            if a.diff>180:
+                d = 360-a.diff
+            else:
+                d = a.diff
             aspects.append(Aspect(
                 id = str(uuid.uuid4()),
                 planet1=a.p1_name,
                 planet2=a.p2_name,
                 type=a.aspect,
-                angle=a.diff,
+                angle=d,
                 orb=a.orbit,
                 applying = (a.aspect_movement == "Applying")
                 ))
