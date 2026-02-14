@@ -5,6 +5,8 @@ from typing import List, Optional
 from datetime import datetime
 from kerykeion import AstrologicalSubjectFactory, AspectsFactory
 import uuid
+from geopy.geocoders import Nominatim
+from timezonefinder import TimezoneFinder
 
 # Create app
 app = FastAPI(
@@ -55,7 +57,7 @@ class Aspect(BaseModel):
     type: str
     angle: float
     orb: float
-    applying: bool = False
+    #applying: bool = False
 
 class Angle(BaseModel):
     id: str = ""
@@ -77,11 +79,11 @@ class ChartRequest(BaseModel):
     name: str
     date: str           # YYYY-MM-DD
     time: str           # HH:MM
-    latitude: float
-    longitude: float
+    #latitude: float
+    #longitude: float
     city: str = "Unknown"
     country: str = ""
-    timezone: str = "UTC"
+    #timezone: str = "UTC"
 
 class ChartResponse(BaseModel):
     id: str
@@ -92,9 +94,29 @@ class ChartResponse(BaseModel):
     aspects: List[Aspect]
     angles: List[Angle]
 
+# -------- City/Country->Lat/Long --------
+geolocator = Nominatim(user_agent="astro_app")
+def get_coordinates(city: str, country: str):
+    location = geolocator.geocode(f"{city}, {country}")
+    if not location:
+        raise ValueError("Location not found")
+
+    return location.latitude, location.longitude
+
+# -------- lat/long->timezone --------
+tf = TimezoneFinder()
+
+def get_timezone(lat: float, lon: float):
+    tz = tf.timezone_at(lat=lat, lng=lon)
+    if not tz:
+        raise ValueError("Timezone not found")
+    return tz
+
 @app.post("/chart", response_model=ChartResponse)
 def calculate_chart(req: ChartRequest):
     try:
+        lat, lon = get_coordinates(req.city, req.country)
+        tz = get_timezone(lat, lon)
         subject = AstrologicalSubjectFactory.from_birth_data(
             name=req.name,
             year=int(req.date.split("-")[0]),
@@ -104,9 +126,9 @@ def calculate_chart(req: ChartRequest):
             minute=int(req.time.split(":")[1]),
             city=req.city,
             nation=req.country,
-            lat=req.latitude,
-            lng=req.longitude,
-            tz_str=req.timezone
+            lat=lat,
+            lng=lon,
+            tz_str=tz
         )
         planet_objects = [subject.sun,subject.moon,subject.mercury,subject.venus,subject.mars,
                           subject.jupiter,subject.saturn,subject.uranus,subject.neptune,subject.pluto,
@@ -168,8 +190,7 @@ def calculate_chart(req: ChartRequest):
                 planet2=a.p2_name,
                 type=a.aspect,
                 angle=d,
-                orb=a.orbit,
-                applying = (a.aspect_movement == "Applying")
+                orb=a.orbit
                 ))
 
         # -------- ANGLES --------
@@ -203,9 +224,9 @@ def calculate_chart(req: ChartRequest):
                 birthDate=req.date,
                 birthTime=req.time,
                 location=f"{req.city}, {req.country}",
-                latitude=req.latitude,
-                longitude=req.longitude,
-                timezone=req.timezone
+                latitude=lat,
+                longitude=lon,
+                timezone=tz
             ),
             planets=planets,
             houses=houses,
