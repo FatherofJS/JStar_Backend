@@ -1,9 +1,7 @@
-# JStar Astrology API — Application entry point
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .routes import chart_router, location_router
+from .routes import chart_router, location_router, chat_router
 
 # Create app
 app = FastAPI(
@@ -24,6 +22,7 @@ app.add_middleware(
 # Register routes
 app.include_router(chart_router)
 app.include_router(location_router)
+app.include_router(chat_router)
 
 
 @app.get("/health")
