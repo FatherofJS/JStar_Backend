@@ -8,14 +8,14 @@ from .routes import chart_router, location_router
 # Create app
 app = FastAPI(
     title="JStar Astrology API",
-    description="Calculate natal charts using Kerykeion",
-    version="1.0.0",
+    description="Astrology and Synastry calculation engine",
+    version="1.0.0"
 )
 
-# CORS for frontend
+# CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # Adjust for production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -27,7 +27,7 @@ app.include_router(location_router)
 
 
 @app.get("/health")
-def health():
+def health_check():
     """Health check endpoint."""
     return {"status": "ok"}
 
