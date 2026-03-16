@@ -1,0 +1,861 @@
+{
+  "id": "9d0a860b-951b-44ee-916f-ade80f21d7b4",
+  "timestamp": "2026-03-16T15:56:21.563191",
+  "subject": {
+    "name": "Le Anh Duc",
+    "birthDate": "2006-09-14",
+    "birthTime": "18:00",
+    "location": "Hanoi, Vietnam",
+    "latitude": 0,
+    "longitude": 0,
+    "timezone": "UTC"
+  },
+  "planets": [
+    {
+      "id": "8e0797bd-477f-4610-b6bc-369735fa7495",
+      "name": "Sun",
+      "symbol": "♍️",
+      "longitude": 171.77822635414208,
+      "sign": "Virgo",
+      "signDegree": 21.778226354142078,
+      "house": 6,
+      "speed": 0.9741395221142943,
+      "retrograde": false
+    },
+    {
+      "id": "c1297169-17d3-4622-9330-becd90b683a0",
+      "name": "Moon",
+      "symbol": "♊️",
+      "longitude": 85.18792102249229,
+      "sign": "Gemini",
+      "signDegree": 25.18792102249229,
+      "house": 4,
+      "speed": 13.055734072861,
+      "retrograde": false
+    },
+    {
+      "id": "03978e31-fa25-4566-a414-6df8c33ac22f",
+      "name": "Mercury",
+      "symbol": "♎️",
+      "longitude": 183.18167515129275,
+      "sign": "Libra",
+      "signDegree": 3.181675151292751,
+      "house": 7,
+      "speed": 1.684613882192998,
+      "retrograde": false
+    },
+    {
+      "id": "fd48fd20-70d5-4018-8e67-3bea9308981a",
+      "name": "Venus",
+      "symbol": "♍️",
+      "longitude": 160.511010123022,
+      "sign": "Virgo",
+      "signDegree": 10.511010123022004,
+      "house": 6,
+      "speed": 1.2404203624204975,
+      "retrograde": false
+    },
+    {
+      "id": "74f5d021-ddb9-4d34-8c59-7e562e4f9231",
+      "name": "Mars",
+      "symbol": "♎️",
+      "longitude": 184.25114495414678,
+      "sign": "Libra",
+      "signDegree": 4.251144954146781,
+      "house": 7,
+      "speed": 0.6490183498462887,
+      "retrograde": false
+    },
+    {
+      "id": "9d43ae96-a126-413d-8454-62df668b4ee9",
+      "name": "Jupiter",
+      "symbol": "♏️",
+      "longitude": 225.56522905162035,
+      "sign": "Scorpio",
+      "signDegree": 15.56522905162035,
+      "house": 8,
+      "speed": 0.1688600305442338,
+      "retrograde": false
+    },
+    {
+      "id": "4dbdf6c9-91e2-47c6-a207-a613aac3090c",
+      "name": "Saturn",
+      "symbol": "♌️",
+      "longitude": 139.59552485204475,
+      "sign": "Leo",
+      "signDegree": 19.595524852044747,
+      "house": 5,
+      "speed": 0.11543472449895398,
+      "retrograde": false
+    },
+    {
+      "id": "106c4278-4f81-41e2-b266-07386314b2d6",
+      "name": "Uranus",
+      "symbol": "♓️",
+      "longitude": 342.37852985509954,
+      "sign": "Pisces",
+      "signDegree": 12.378529855099544,
+      "house": 12,
+      "speed": -0.03921364698985619,
+      "retrograde": true
+    },
+    {
+      "id": "77f10dff-fdc3-488b-ae8f-93017e71d092",
+      "name": "Neptune",
+      "symbol": "♒️",
+      "longitude": 317.5444470145768,
+      "sign": "Aquarius",
+      "signDegree": 17.544447014576804,
+      "house": 11,
+      "speed": -0.02127186669545722,
+      "retrograde": true
+    },
+    {
+      "id": "4c4b154f-b0ed-4237-807b-6bf95551548e",
+      "name": "Pluto",
+      "symbol": "♐️",
+      "longitude": 264.1027139971407,
+      "sign": "Sagittarius",
+      "signDegree": 24.10271399714071,
+      "house": 10,
+      "speed": 0.005218693955547119,
+      "retrograde": false
+    },
+    {
+      "id": "8a9144bc-040b-42e4-ba49-0daeb682749f",
+      "name": "Chiron",
+      "symbol": "♒️",
+      "longitude": 304.86520267647717,
+      "sign": "Aquarius",
+      "signDegree": 4.865202676477168,
+      "house": 11,
+      "speed": -0.03096797832023635,
+      "retrograde": true
+    },
+    {
+      "id": "b043de64-ee48-40db-adeb-6c7ffa110f27",
+      "name": "True_South_Lunar_Node",
+      "symbol": "♍️",
+      "longitude": 175.38091676292856,
+      "sign": "Virgo",
+      "signDegree": 25.380916762928564,
+      "house": 7,
+      "speed": 0.00011333608723674462,
+      "retrograde": true
+    },
+    {
+      "id": "12b5abbb-5908-47c6-94c7-7eb9b9fe4a8b",
+      "name": "True_North_Lunar_Node",
+      "symbol": "♓️",
+      "longitude": 355.3809167629286,
+      "sign": "Pisces",
+      "signDegree": 25.38091676292862,
+      "house": 1,
+      "speed": -0.00011333608723674462,
+      "retrograde": true
+    }
+  ],
+  "houses": [
+    {
+      "id": 1,
+      "cusp": 352.9994914112187,
+      "sign": "Pisces",
+      "signDegree": 22.999491411218685,
+      "size": 32.43437382808952
+    },
+    {
+      "id": 2,
+      "cusp": 25.433865239308226,
+      "sign": "Aries",
+      "signDegree": 25.433865239308226,
+      "size": 30.464024016188368
+    },
+    {
+      "id": 3,
+      "cusp": 55.897889255496594,
+      "sign": "Taurus",
+      "signDegree": 25.897889255496594,
+      "size": 28.20088295226377
+    },
+    {
+      "id": 4,
+      "cusp": 84.09877220776036,
+      "sign": "Gemini",
+      "signDegree": 24.098772207760362,
+      "size": 27.71758251336155
+    },
+    {
+      "id": 5,
+      "cusp": 111.81635472112191,
+      "sign": "Cancer",
+      "signDegree": 21.81635472112191,
+      "size": 29.370439486786267
+    },
+    {
+      "id": 6,
+      "cusp": 141.18679420790818,
+      "sign": "Leo",
+      "signDegree": 21.18679420790818,
+      "size": 31.812697203310563
+    },
+    {
+      "id": 7,
+      "cusp": 172.99949141121874,
+      "sign": "Virgo",
+      "signDegree": 22.99949141121874,
+      "size": 32.43437382808949
+    },
+    {
+      "id": 8,
+      "cusp": 205.43386523930823,
+      "sign": "Libra",
+      "signDegree": 25.433865239308233,
+      "size": 30.464024016188347
+    },
+    {
+      "id": 9,
+      "cusp": 235.89788925549658,
+      "sign": "Scorpio",
+      "signDegree": 25.89788925549658,
+      "size": 28.200882952263782
+    },
+    {
+      "id": 10,
+      "cusp": 264.09877220776036,
+      "sign": "Sagittarius",
+      "signDegree": 24.098772207760362,
+      "size": 27.71758251336155
+    },
+    {
+      "id": 11,
+      "cusp": 291.8163547211219,
+      "sign": "Capricorn",
+      "signDegree": 21.81635472112191,
+      "size": 29.370439486786267
+    },
+    {
+      "id": 12,
+      "cusp": 321.1867942079082,
+      "sign": "Aquarius",
+      "signDegree": 21.18679420790818,
+      "size": 31.812697203310506
+    }
+  ],
+  "aspects": [
+    {
+      "id": "828b14ea-568f-42d8-a1ae-e73b20cb51dd",
+      "planet1": "Sun",
+      "planet2": "Moon",
+      "type": "square",
+      "angle": 86.59030533164979,
+      "orb": 3.4096946683502125,
+      "applying": false
+    },
+    {
+      "id": "c06925b2-8b11-48bd-9aaf-7fb61236a9cc",
+      "planet1": "Sun",
+      "planet2": "Uranus",
+      "type": "opposition",
+      "angle": 170.60030350095747,
+      "orb": 9.399696499042534,
+      "applying": false
+    },
+    {
+      "id": "8bce5447-a8c8-4454-b8f3-eec00b3117eb",
+      "planet1": "Sun",
+      "planet2": "Pluto",
+      "type": "square",
+      "angle": 92.32448764299863,
+      "orb": 2.3244876429986334,
+      "applying": true
+    },
+    {
+      "id": "4edb9b65-e11d-46ee-afab-3d24ec8f4a07",
+      "planet1": "Sun",
+      "planet2": "True_North_Lunar_Node",
+      "type": "opposition",
+      "angle": 176.39730959121346,
+      "orb": 3.6026904087865432,
+      "applying": true
+    },
+    {
+      "id": "08a302b7-bc0b-43e3-934b-ef59e58b9f7d",
+      "planet1": "Sun",
+      "planet2": "Ascendant",
+      "type": "opposition",
+      "angle": 178.7787349429234,
+      "orb": 1.2212650570766073,
+      "applying": false
+    },
+    {
+      "id": "6ed8ec2b-6b4c-4bde-a824-d50c71035300",
+      "planet1": "Sun",
+      "planet2": "Medium_Coeli",
+      "type": "square",
+      "angle": 92.32054585361828,
+      "orb": 2.3205458536182846,
+      "applying": false
+    },
+    {
+      "id": "8a0e5f73-c955-4b3f-a8f8-a6f6659da839",
+      "planet1": "Sun",
+      "planet2": "Descendant",
+      "type": "conjunction",
+      "angle": 1.221265057076664,
+      "orb": 1.221265057076664,
+      "applying": false
+    },
+    {
+      "id": "e55b313c-bd69-4ff7-b2b7-85b38e2ca9d9",
+      "planet1": "Sun",
+      "planet2": "Imum_Coeli",
+      "type": "square",
+      "angle": 87.67945414638172,
+      "orb": 2.3205458536182846,
+      "applying": false
+    },
+    {
+      "id": "cee52d3e-4912-41e2-85de-7068b48b154a",
+      "planet1": "Sun",
+      "planet2": "Mean_Lilith",
+      "type": "conjunction",
+      "angle": 4.3163644858350665,
+      "orb": 4.316364485835038,
+      "applying": true
+    },
+    {
+      "id": "1bc1045a-2d33-4825-abf7-866c1e43901e",
+      "planet1": "Sun",
+      "planet2": "True_South_Lunar_Node",
+      "type": "conjunction",
+      "angle": 3.6026904087864864,
+      "orb": 3.6026904087864864,
+      "applying": true
+    },
+    {
+      "id": "46717d69-eb34-4c87-b56e-8769964f709e",
+      "planet1": "Moon",
+      "planet2": "Saturn",
+      "type": "sextile",
+      "angle": 54.40760382955246,
+      "orb": 5.592396170447557,
+      "applying": false
+    },
+    {
+      "id": "a632a81d-5d85-4fc9-b762-2dcae1be5173",
+      "planet1": "Moon",
+      "planet2": "Neptune",
+      "type": "trine",
+      "angle": 127.64347400791547,
+      "orb": 7.643474007915472,
+      "applying": false
+    },
+    {
+      "id": "93903703-9c35-4a81-bb8a-b40334c64f87",
+      "planet1": "Moon",
+      "planet2": "Pluto",
+      "type": "opposition",
+      "angle": 178.91479297464844,
+      "orb": 1.0852070253515649,
+      "applying": false
+    },
+    {
+      "id": "ec381b69-0197-41cd-9257-bd87717d4090",
+      "planet1": "Moon",
+      "planet2": "True_North_Lunar_Node",
+      "type": "square",
+      "angle": 89.80700425956366,
+      "orb": 0.19299574043634493,
+      "applying": true
+    },
+    {
+      "id": "24354ea3-2eca-4b37-9a6f-5ac9abb97031",
+      "planet1": "Moon",
+      "planet2": "Ascendant",
+      "type": "square",
+      "angle": 92.18842961127359,
+      "orb": 2.188429611273591,
+      "applying": true
+    },
+    {
+      "id": "2ce6f80e-36f6-46e8-9963-98954f42b554",
+      "planet1": "Moon",
+      "planet2": "Medium_Coeli",
+      "type": "opposition",
+      "angle": 178.9108511852681,
+      "orb": 1.0891488147319137,
+      "applying": true
+    },
+    {
+      "id": "5d6f8397-d8f7-4ac2-9e3e-d10dab5bfb76",
+      "planet1": "Moon",
+      "planet2": "Descendant",
+      "type": "square",
+      "angle": 87.81157038872645,
+      "orb": 2.188429611273534,
+      "applying": true
+    },
+    {
+      "id": "ffd0066e-cf4a-4216-b7fd-cc7891940876",
+      "planet1": "Moon",
+      "planet2": "Imum_Coeli",
+      "type": "conjunction",
+      "angle": 1.089148814731928,
+      "orb": 1.089148814731928,
+      "applying": true
+    },
+    {
+      "id": "35c1bf0b-149e-4a35-9596-944940033790",
+      "planet1": "Moon",
+      "planet2": "Mean_Lilith",
+      "type": "square",
+      "angle": 90.90666981748485,
+      "orb": 0.9066698174848398,
+      "applying": true
+    },
+    {
+      "id": "fdfeafef-b06f-482a-a88f-a220db9ca141",
+      "planet1": "Moon",
+      "planet2": "True_South_Lunar_Node",
+      "type": "square",
+      "angle": 90.19299574043627,
+      "orb": 0.1929957404362881,
+      "applying": true
+    },
+    {
+      "id": "4d18ef01-d7c3-478e-bcf4-4ca0bebd0b6f",
+      "planet1": "Mercury",
+      "planet2": "Mars",
+      "type": "conjunction",
+      "angle": 1.0694698028540301,
+      "orb": 1.0694698028540301,
+      "applying": true
+    },
+    {
+      "id": "721425e3-fe3f-42e4-90b4-d5c15ef90f91",
+      "planet1": "Mercury",
+      "planet2": "True_North_Lunar_Node",
+      "type": "opposition",
+      "angle": 172.19924161163587,
+      "orb": 7.80075838836413,
+      "applying": false
+    },
+    {
+      "id": "d76f1919-00d5-48db-9298-c4c18df4c73b",
+      "planet1": "Mercury",
+      "planet2": "Chiron",
+      "type": "trine",
+      "angle": 121.68352752518442,
+      "orb": 1.6835275251844166,
+      "applying": true
+    },
+    {
+      "id": "9e74017b-9ec9-42c3-abe8-6878e7a51504",
+      "planet1": "Mercury",
+      "planet2": "Mean_Lilith",
+      "type": "conjunction",
+      "angle": 7.087084311315607,
+      "orb": 7.087084311315607,
+      "applying": false
+    },
+    {
+      "id": "ce8e8c4d-1d27-4f80-9232-771d68cf2c8b",
+      "planet1": "Mercury",
+      "planet2": "True_South_Lunar_Node",
+      "type": "conjunction",
+      "angle": 7.800758388364187,
+      "orb": 7.800758388364187,
+      "applying": false
+    },
+    {
+      "id": "6b61cb02-0e40-44e0-b6d1-3fdd83833486",
+      "planet1": "Venus",
+      "planet2": "Jupiter",
+      "type": "sextile",
+      "angle": 65.05421892859835,
+      "orb": 5.054218928598345,
+      "applying": true
+    },
+    {
+      "id": "c35818be-076d-426a-84e3-113f13a682da",
+      "planet1": "Venus",
+      "planet2": "Uranus",
+      "type": "opposition",
+      "angle": 178.13248026792246,
+      "orb": 1.8675197320775396,
+      "applying": true
+    },
+    {
+      "id": "da020b5b-8c22-4154-893f-4468d1038619",
+      "planet1": "Mars",
+      "planet2": "True_North_Lunar_Node",
+      "type": "opposition",
+      "angle": 171.12977180878184,
+      "orb": 8.87022819121816,
+      "applying": false
+    },
+    {
+      "id": "04a55e78-bb06-431e-8c8e-3c17a436713d",
+      "planet1": "Mars",
+      "planet2": "Chiron",
+      "type": "trine",
+      "angle": 120.61405772233039,
+      "orb": 0.6140577223303865,
+      "applying": true
+    },
+    {
+      "id": "c792f0b2-cb8d-45be-8dcc-fba9f70a24dd",
+      "planet1": "Mars",
+      "planet2": "Mean_Lilith",
+      "type": "conjunction",
+      "angle": 8.156554114169637,
+      "orb": 8.156554114169637,
+      "applying": false
+    },
+    {
+      "id": "12423f50-a0be-495a-b7d2-cbf716883fc9",
+      "planet1": "Mars",
+      "planet2": "True_South_Lunar_Node",
+      "type": "conjunction",
+      "angle": 8.870228191218217,
+      "orb": 8.870228191218217,
+      "applying": false
+    },
+    {
+      "id": "9af1d9e0-8edc-4e00-b642-e97a3171d8cd",
+      "planet1": "Jupiter",
+      "planet2": "Saturn",
+      "type": "square",
+      "angle": 85.9697041995756,
+      "orb": 4.030295800424398,
+      "applying": true
+    },
+    {
+      "id": "6272b9bc-dad9-4402-927f-b74ec5abad95",
+      "planet1": "Jupiter",
+      "planet2": "Uranus",
+      "type": "trine",
+      "angle": 116.8133008034792,
+      "orb": 3.186699196520806,
+      "applying": false
+    },
+    {
+      "id": "3f6e1afd-117f-416a-9f21-09d14a7b7577",
+      "planet1": "Jupiter",
+      "planet2": "Neptune",
+      "type": "square",
+      "angle": 91.97921796295645,
+      "orb": 1.9792179629564544,
+      "applying": true
+    },
+    {
+      "id": "658600f5-1eb9-4679-86d9-038024721ee2",
+      "planet1": "Jupiter",
+      "planet2": "Ascendant",
+      "type": "trine",
+      "angle": 127.43426235959834,
+      "orb": 7.4342623595983355,
+      "applying": false
+    },
+    {
+      "id": "4934a5ac-53fa-44c4-8612-c739fd67bcbd",
+      "planet1": "Saturn",
+      "planet2": "Neptune",
+      "type": "opposition",
+      "angle": 177.94892216253206,
+      "orb": 2.0510778374679433,
+      "applying": false
+    },
+    {
+      "id": "cee324f2-8969-4a88-93f9-9b597a792afe",
+      "planet1": "Saturn",
+      "planet2": "Pluto",
+      "type": "trine",
+      "angle": 124.50718914509596,
+      "orb": 4.507189145095964,
+      "applying": true
+    },
+    {
+      "id": "4e654b22-d4f1-4aa2-a96d-107bab7b0b41",
+      "planet1": "Saturn",
+      "planet2": "Medium_Coeli",
+      "type": "trine",
+      "angle": 124.50324735571562,
+      "orb": 4.503247355715615,
+      "applying": false
+    },
+    {
+      "id": "be0fa766-7858-4a53-9e3b-c4fc8f78d92a",
+      "planet1": "Saturn",
+      "planet2": "Imum_Coeli",
+      "type": "sextile",
+      "angle": 55.496752644284385,
+      "orb": 4.503247355715615,
+      "applying": false
+    },
+    {
+      "id": "4b1c9af5-5bb6-4135-9b01-cdceceb29b1e",
+      "planet1": "Neptune",
+      "planet2": "Imum_Coeli",
+      "type": "trine",
+      "angle": 126.55432519318356,
+      "orb": 6.554325193183558,
+      "applying": false
+    },
+    {
+      "id": "7dca9536-658f-4f7d-a3da-a684dc3ff7fd",
+      "planet1": "Pluto",
+      "planet2": "True_North_Lunar_Node",
+      "type": "square",
+      "angle": 91.27820276578791,
+      "orb": 1.2782027657879098,
+      "applying": true
+    },
+    {
+      "id": "b435d198-49ca-46c3-8acf-53d90ab18371",
+      "planet1": "Pluto",
+      "planet2": "Ascendant",
+      "type": "square",
+      "angle": 88.89677741407797,
+      "orb": 1.1032225859220262,
+      "applying": true
+    },
+    {
+      "id": "d1fd5557-311a-430e-b819-333e466be260",
+      "planet1": "Pluto",
+      "planet2": "Medium_Coeli",
+      "type": "conjunction",
+      "angle": 0.003941789380348837,
+      "orb": 0.003941789380348837,
+      "applying": false
+    },
+    {
+      "id": "689a0358-d735-4e98-b1d9-c0a48e89567a",
+      "planet1": "Pluto",
+      "planet2": "Descendant",
+      "type": "square",
+      "angle": 91.10322258592197,
+      "orb": 1.1032225859219693,
+      "applying": true
+    },
+    {
+      "id": "a3fe7719-04ac-48fd-9371-a484079ea6b9",
+      "planet1": "Pluto",
+      "planet2": "Imum_Coeli",
+      "type": "opposition",
+      "angle": 179.99605821061965,
+      "orb": 0.003941789380348837,
+      "applying": false
+    },
+    {
+      "id": "779b247a-7cd8-4cb6-86b6-c1e8ad6f5d31",
+      "planet1": "Pluto",
+      "planet2": "Mean_Lilith",
+      "type": "square",
+      "angle": 88.00812315716357,
+      "orb": 1.991876842836433,
+      "applying": false
+    },
+    {
+      "id": "be7672d6-a424-4728-8138-8a85936d488c",
+      "planet1": "Pluto",
+      "planet2": "True_South_Lunar_Node",
+      "type": "square",
+      "angle": 88.72179723421215,
+      "orb": 1.278202765787853,
+      "applying": true
+    },
+    {
+      "id": "5aaa378a-6267-456e-bced-7f1f0ac52bf9",
+      "planet1": "True_North_Lunar_Node",
+      "planet2": "Ascendant",
+      "type": "conjunction",
+      "angle": 2.381425351709936,
+      "orb": 2.381425351709936,
+      "applying": true
+    },
+    {
+      "id": "68e24866-cec3-43d7-91c6-aaad377e1add",
+      "planet1": "True_North_Lunar_Node",
+      "planet2": "Medium_Coeli",
+      "type": "square",
+      "angle": 91.28214455516826,
+      "orb": 1.2821445551682586,
+      "applying": true
+    },
+    {
+      "id": "505648c1-118b-4601-a935-6acb4376000f",
+      "planet1": "True_North_Lunar_Node",
+      "planet2": "Descendant",
+      "type": "opposition",
+      "angle": 177.61857464829012,
+      "orb": 2.381425351709879,
+      "applying": true
+    },
+    {
+      "id": "0e9e180b-f464-4fda-9f0f-4d533876a68a",
+      "planet1": "True_North_Lunar_Node",
+      "planet2": "Imum_Coeli",
+      "type": "square",
+      "angle": 88.71785544483174,
+      "orb": 1.2821445551682586,
+      "applying": true
+    },
+    {
+      "id": "383db424-39b7-4f7e-b482-2ec6132347fd",
+      "planet1": "True_North_Lunar_Node",
+      "planet2": "Mean_Lilith",
+      "type": "opposition",
+      "angle": 179.28632592295148,
+      "orb": 0.7136740770485233,
+      "applying": false
+    },
+    {
+      "id": "8d9360c2-6193-4db6-826f-7d4e6a5ca63e",
+      "planet1": "Ascendant",
+      "planet2": "Medium_Coeli",
+      "type": "square",
+      "angle": 88.90071920345832,
+      "orb": 1.0992807965416773,
+      "applying": false
+    },
+    {
+      "id": "75773920-8d20-4426-ac47-096f3f375452",
+      "planet1": "Ascendant",
+      "planet2": "Imum_Coeli",
+      "type": "square",
+      "angle": 91.09928079654168,
+      "orb": 1.0992807965416773,
+      "applying": false
+    },
+    {
+      "id": "504496b7-731a-4900-a5a6-9676bed85d65",
+      "planet1": "Ascendant",
+      "planet2": "Mean_Lilith",
+      "type": "opposition",
+      "angle": 176.90490057124154,
+      "orb": 3.0950994287584592,
+      "applying": true
+    },
+    {
+      "id": "25752ea9-bb8d-4f68-9adc-58fabbb64f95",
+      "planet1": "Ascendant",
+      "planet2": "True_South_Lunar_Node",
+      "type": "opposition",
+      "angle": 177.61857464829012,
+      "orb": 2.381425351709879,
+      "applying": true
+    },
+    {
+      "id": "5ff8adc0-625d-4017-bb27-fe8e07c0d76d",
+      "planet1": "Medium_Coeli",
+      "planet2": "Descendant",
+      "type": "square",
+      "angle": 91.09928079654162,
+      "orb": 1.0992807965416205,
+      "applying": false
+    },
+    {
+      "id": "606954b1-b4f5-4c4b-b754-82c4f970d6e1",
+      "planet1": "Medium_Coeli",
+      "planet2": "Mean_Lilith",
+      "type": "square",
+      "angle": 88.00418136778322,
+      "orb": 1.995818632216782,
+      "applying": true
+    },
+    {
+      "id": "e72da7d2-e8e1-4203-8691-0d4c835b68c5",
+      "planet1": "Medium_Coeli",
+      "planet2": "True_South_Lunar_Node",
+      "type": "square",
+      "angle": 88.7178554448318,
+      "orb": 1.2821445551682018,
+      "applying": true
+    },
+    {
+      "id": "64af4cbc-b9b3-476c-9b04-3d1c914dc120",
+      "planet1": "Descendant",
+      "planet2": "Imum_Coeli",
+      "type": "square",
+      "angle": 88.90071920345838,
+      "orb": 1.0992807965416205,
+      "applying": false
+    },
+    {
+      "id": "afabf2c0-9cfa-4d1a-ab00-123016b62051",
+      "planet1": "Descendant",
+      "planet2": "Mean_Lilith",
+      "type": "conjunction",
+      "angle": 3.0950994287584024,
+      "orb": 3.095099428758431,
+      "applying": true
+    },
+    {
+      "id": "59239729-1022-455c-ac45-129a97b6f2d2",
+      "planet1": "Descendant",
+      "planet2": "True_South_Lunar_Node",
+      "type": "conjunction",
+      "angle": 2.3814253517098223,
+      "orb": 2.3814253517098223,
+      "applying": true
+    },
+    {
+      "id": "20019784-bdc2-42ee-803b-1e9e0de4d05d",
+      "planet1": "Imum_Coeli",
+      "planet2": "Mean_Lilith",
+      "type": "square",
+      "angle": 91.99581863221678,
+      "orb": 1.9958186322168103,
+      "applying": true
+    },
+    {
+      "id": "20e9e4d6-a49e-48cd-8f4d-95580575feb4",
+      "planet1": "Imum_Coeli",
+      "planet2": "True_South_Lunar_Node",
+      "type": "square",
+      "angle": 91.2821445551682,
+      "orb": 1.2821445551682018,
+      "applying": true
+    },
+    {
+      "id": "117721be-293d-4900-99fa-855577c7a2cf",
+      "planet1": "Mean_Lilith",
+      "planet2": "True_South_Lunar_Node",
+      "type": "conjunction",
+      "angle": 0.7136740770485801,
+      "orb": 0.7136740770485801,
+      "applying": false
+    }
+  ],
+  "angles": [
+    {
+      "id": "3292933c-889d-4e75-8550-f7cd202d81c4",
+      "name": "ASC",
+      "longitude": 352.9994914112187,
+      "sign": "Pisces",
+      "signDegree": 22.999491411218685
+    },
+    {
+      "id": "589b6d30-75de-429a-8824-c527a2e65f7f",
+      "name": "DSC",
+      "longitude": 172.99949141121874,
+      "sign": "Virgo",
+      "signDegree": 22.99949141121874
+    },
+    {
+      "id": "2a505eeb-9dfc-474e-b62e-b9691866649b",
+      "name": "MC",
+      "longitude": 264.09877220776036,
+      "sign": "Sagittarius",
+      "signDegree": 24.098772207760362
+    },
+    {
+      "id": "64c16e2f-74db-4543-93a7-86bc8fefadeb",
+      "name": "IC",
+      "longitude": 84.09877220776036,
+      "sign": "Gemini",
+      "signDegree": 24.098772207760362
+    }
+  ]
+}
