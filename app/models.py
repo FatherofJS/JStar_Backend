@@ -82,3 +82,29 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     answer: str
     tokens_used: int
+
+
+class SynastryAspect(BaseModel):
+    id: str = ""
+    person1_planet: str
+    person2_planet: str
+    type: str
+    angle: float
+    orb: float
+
+class SynastryRequest(BaseModel):
+    person1: ChartRequest
+    person2: ChartRequest
+
+class SynastryResponse(BaseModel):
+    id: str
+    timestamp: datetime
+    person1: Subject
+    person2: Subject
+    person1_planets: List[Planet]
+    person2_planets: List[Planet]
+    person1_houses: List[House]
+    person2_houses: List[House]
+    person1_angles: List[Angle]
+    person2_angles: List[Angle]
+    aspects: List[SynastryAspect]

@@ -23,13 +23,13 @@ key_cycle = itertools.cycle(API_KEYS) if API_KEYS else None
 def get_next_client() -> Groq:
     if not key_cycle:
         raise HTTPException(status_code=500, detail="Chatbot is currently unavailable (No API keys configured).")
-    
+
     next_key = next(key_cycle)
     return Groq(api_key=next_key)
 
 def compress_chart_data(chart: dict) -> str:
     lines = []
-    
+
     for angle in chart.get("angles", []):
         if angle.get("name") in ["AC", "MC", "Ascendant", "Midheaven"]:
             lines.append(f"{angle.get('name')}-{angle.get('sign')}-{angle.get('signDegree', 0):.1f}°")
@@ -55,7 +55,8 @@ Keep your answers short, under 200 words."""
 @router.post("/", response_model=ChatResponse)
 @limiter.limit("10/minute")
 async def ask_chatbot(request: Request, body: ChatRequest):
-    #Mock_chart.json for testing purposes only 
+    #Mock_chart.json for testing purposes only
+    #TODO: Add exception when there are no charts for query
 
     chart = body.chart_data
     if not chart:
@@ -71,7 +72,7 @@ async def ask_chatbot(request: Request, body: ChatRequest):
     compressed_chart = compress_chart_data(chart)
 
     client = get_next_client()
-    
+
     try:
         chat = client.chat.completions.create(
             messages=[
