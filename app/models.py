@@ -1,5 +1,3 @@
-# Pydantic models shared across all routes
-
 from pydantic import BaseModel, Field
 from typing import List
 from datetime import datetime
@@ -73,9 +71,16 @@ class ChartResponse(BaseModel):
     angles: List[Angle]
 
 
+class ChatMessage(BaseModel):
+    role: str
+    content: str
+
+
 class ChatRequest(BaseModel):
     question: str = Field(..., max_length=500)
     chart_data: dict = Field(default_factory=dict)
+    chart_type: str = "natal"
+    history: List[ChatMessage] = Field(default_factory=list)
 
 
 class ChatResponse(BaseModel):

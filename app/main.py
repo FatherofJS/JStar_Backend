@@ -5,7 +5,7 @@ from slowapi.errors import RateLimitExceeded
 from .rate_limiter import limiter
 
 from .routes import chart_router, location_router, chat_router
-
+import os
 # Create app
 app = FastAPI(
     title="JStar Astrology API",
@@ -25,7 +25,6 @@ app.add_middleware(
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-# Register routes
 app.include_router(chart_router)
 app.include_router(location_router)
 app.include_router(chat_router)
@@ -39,5 +38,5 @@ def health_check():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
-
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
