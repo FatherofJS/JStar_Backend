@@ -14,7 +14,8 @@ load_dotenv()
 router = APIRouter(prefix="/api/chat")
 keys = os.environ.get("GROQ_API_KEYS", "")
 NATAL_PROMPT = os.environ.get("NATAL_PROMPT")
-SYNASTRY_PROMPT = os.environ.get("SYNASTRY_PROMPT")API_KEYS = [k.strip() for k in keys.split(",") if k.strip()]
+SYNASTRY_PROMPT = os.environ.get("SYNASTRY_PROMPT")
+API_KEYS = [k.strip() for k in keys.split(",") if k.strip()]
 
 key_cycle = itertools.cycle(API_KEYS) if API_KEYS else None
 

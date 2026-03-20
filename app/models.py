@@ -78,7 +78,7 @@ class ChatMessage(BaseModel):
 
 class ChatRequest(BaseModel):
     question: str = Field(..., max_length=500)
-    chart_data: dict = Field(default_factory=dict)
+    chart_data: dict = Field(default_factory=dict, json_schema_extra={"example": {}})
     chart_type: str = "natal"
     history: List[ChatMessage] = Field(default_factory=list)
 
