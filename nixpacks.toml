@@ -1,5 +1,0 @@
-[phases.setup]
-nixPkgs = ["...", "gcc", "g++"]
-
-[build]
-builder = "python"
