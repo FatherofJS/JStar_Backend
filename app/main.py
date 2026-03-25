@@ -4,6 +4,11 @@ from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from .rate_limiter import limiter
 
+import cloudinary
+import cloudinary.search
+from dotenv import load_dotenv
+load_dotenv()
+
 from .routes import chart_router, location_router, chat_router
 import os
 # Create app
@@ -35,8 +40,26 @@ def health_check():
     """Health check endpoint."""
     return {"status": "ok"}
 
+cloudinary.config(
+    cloud_name=os.getenv("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.getenv("CLOUDINARY_API_KEY"),
+    api_secret=os.getenv("CLOUDINARY_API_SECRET")
+)
+
+@app.get("/fatherofjs")
+def get_images():
+    result = cloudinary.search.Search()\
+        .expression("folder:JSTAR")\
+        .sort_by("created_at", "desc")\
+        .max_results(50)\
+        .execute()
+
+    return result["resources"]
+
 
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
+
+app = FastAPI()
