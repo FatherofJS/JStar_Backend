@@ -19,9 +19,10 @@ app = FastAPI(
 )
 
 # CORS
+origins = os.getenv("FRONTEND_URL", "*").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust for production
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
