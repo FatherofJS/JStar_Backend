@@ -80,7 +80,7 @@ def compress_chart_data(chart: dict) -> str:
     return "\\n".join(lines)
 
 @router.post("/", response_model=ChatResponse)
-@limiter.limit("10/minute")
+@limiter.limit("7/minute")
 async def ask_chatbot(request: Request, body: ChatRequest):
     req_start = time.time()
     chart = body.chart_data

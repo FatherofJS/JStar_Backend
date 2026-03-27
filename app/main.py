@@ -18,7 +18,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS
 origins = os.getenv("FRONTEND_URL", "*").split(",")
 app.add_middleware(
     CORSMiddleware,
@@ -41,21 +40,67 @@ def health_check():
     """Health check endpoint."""
     return {"status": "ok"}
 
-cloudinary.config(
-    cloud_name=os.getenv("CLOUDINARY_CLOUD_NAME"),
-    api_key=os.getenv("CLOUDINARY_API_KEY"),
-    api_secret=os.getenv("CLOUDINARY_API_SECRET")
-)
-
 @app.get("/fatherofjs")
 def get_images():
     result = cloudinary.search.Search()\
-        .expression("folder:JSTAR")\
+        .expression("folder:easter_egg")\
         .sort_by("created_at", "desc")\
         .max_results(50)\
         .execute()
 
     return result["resources"]
+
+cloudinary.config(
+    cloud_name=os.getenv("CLOUDINARY_BOARD_CLOUD_NAME"),
+    api_key=os.getenv("CLOUDINARY_BOARD_API_KEY"),
+    api_secret=os.getenv("CLOUDINARY_BOARD_API_SECRET")
+)
+
+ZODIAC_SIGNS = [
+    "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
+    "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"
+]
+CATEGORIES = ["Fashion", "Hành tinh", "Others", "Quotes", "Đồ vật", "Đồ ăn"]
+
+@app.get("/zodiac-board")
+def get_zodiac_board():
+    all_resources = []
+    next_cursor = None
+
+    while True:
+        search = cloudinary.search.Search()\
+            .expression("resource_type:image AND asset_folder:Natal*")\
+            .sort_by("created_at", "desc")\
+            .max_results(500)
+
+        if next_cursor:
+            search = search.next_cursor(next_cursor)
+
+        result = search.execute()
+        all_resources.extend(result.get("resources", []))
+        next_cursor = result.get("next_cursor")
+        if not next_cursor:
+            break
+
+    manifest = {}
+    for sign in ZODIAC_SIGNS:
+        manifest[sign] = {cat: [] for cat in CATEGORIES}
+
+    for resource in all_resources:
+        asset_folder = resource.get("asset_folder", "") 
+        public_id = resource["public_id"]                
+        
+        parts = asset_folder.split("/")
+        if len(parts) < 3 or parts[0] != "Natal":
+            continue
+            
+        sign = parts[1]
+        category = parts[2]
+        
+        if sign in manifest and category in manifest[sign]:
+            manifest[sign][category].append(public_id)
+
+    return manifest
 
 
 if __name__ == "__main__":
